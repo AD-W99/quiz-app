@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Start from './Components/Start';
 import Quiz from './Components/Quiz';
+import './App.css';
 
 function App() {
   const [quizStart, setQuizStart] = React.useState(false);
