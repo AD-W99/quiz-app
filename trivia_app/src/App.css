@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #F5F7FB;
+    /* background-color: #F5F7FB; */
+    background-color: azure;
     font-family: 'Karla', sans-serif;
 }
