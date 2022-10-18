@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
 
-export default function Question({ questionDetails, randomNum }) {
+export default function Question({ questionDetails, randomNum, showAnswers }) {
     function generateChoices() {
         const answersArray = [
             {
@@ -34,6 +34,8 @@ export default function Question({ questionDetails, randomNum }) {
 
 
     const changeButton = (e) => {
+        if (showAnswers) return;
+
         setAllChoices(prevState => 
             prevState.map(obj => {
                 if (e.target.innerText === obj.answer) {
@@ -54,6 +56,7 @@ export default function Question({ questionDetails, randomNum }) {
                     isChosen={choice.isChosen}
                     isCorrect={choice.isCorrect}
                     answer={choice.answer}
+                    showAnswers={showAnswers}
                 />
     })
 

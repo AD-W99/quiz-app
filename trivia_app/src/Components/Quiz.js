@@ -1,15 +1,30 @@
-import React from 'react';
+import { useState } from 'react';
 import Question from './Question';
 
 export default function Quiz({ triviaData }) {
-    const randomNum = Math.floor(Math.random() * 4);
+    const [showAnswers, setShowAnswers] = useState(false);
+
     const questions = triviaData.map((obj, index) => {
-        return <Question key={index} questionDetails={obj} randomNum={randomNum} />
-    })
+        let randomNum = Math.floor(Math.random() * 4);
+
+        return <Question
+            key={index}
+            questionDetails={obj}
+            randomNum={randomNum}
+            showAnswers={showAnswers}
+        />
+    });
+
+    function revealAnswers() {
+        setShowAnswers(true);
+    }
 
     return (
-        <>
-            {questions}
-        </>
-    )
+        <div className='container'>
+            <div className='questions-container'>
+                {questions}
+            </div>
+            <button onClick={revealAnswers}>Check answers</button>
+        </div>
+    );
 }
