@@ -9,6 +9,7 @@ export default function Button({
 }) {
     const choiceStyle = {
         backgroundColor: isChosen ? "#D6DBF5" : "#F5F7FB",
+        border: isChosen ? "1px solid #D6DBF5" : ""
     }
 
     const rightStyle = {

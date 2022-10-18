@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import Button from './Button';
+import './Question.css'
 
-export default function Question({ questionDetails, randomNum, showAnswers }) {
+export default function Question({ 
+    questionDetails,
+    randomNum,
+    showAnswers,
+    rightAnswers
+}) {
     function generateChoices() {
+
         const answersArray = [
             {
                 answer: questionDetails.incorrect_answers[0],
@@ -35,13 +42,17 @@ export default function Question({ questionDetails, randomNum, showAnswers }) {
 
     const changeButton = (e) => {
         if (showAnswers) return;
-
+        
         setAllChoices(prevState => 
             prevState.map(obj => {
                 if (e.target.innerText === obj.answer) {
                     obj.isChosen = true;
+
+                    if (obj.isCorrect) {
+                        rightAnswers.current += 1;
+                    }
                 } else {
-                    obj.isChosen = false
+                    obj.isChosen = false;
                 }
 
                 return obj;
@@ -61,9 +72,9 @@ export default function Question({ questionDetails, randomNum, showAnswers }) {
     })
 
     return (
-        <>
-            <h3>{questionDetails.question}</h3>
+        <div className='single-question-container'>
+            <h3 className='question'>{questionDetails.question}</h3>
             {choices}
-        </>
+        </div>
     )
 }

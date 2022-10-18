@@ -1,3 +1,6 @@
 button {
-    border: 0;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    padding: 4px 16px;
+    margin: 0 8px;
 }

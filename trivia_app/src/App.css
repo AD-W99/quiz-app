@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #F5F7FB; */
-    background-color: azure;
+    background-color: #F5F7FB;
     font-family: 'Karla', sans-serif;
 }
 
@@ -11,4 +10,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.check-answers-btn {
+    height: 35px;
+    color: #F5F7FB;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+    margin-top: 1rem;
+    font-family: 'Karla';
 }
