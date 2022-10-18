@@ -26,9 +26,10 @@ export default function Quiz({ triviaData }) {
             <div className='questions-container'>
                 {questions}
             </div>
-            <div>
+            <div className='button-container'>
                 {showAnswers && <p>You scored {rightAnswers.current}/5 correct answers</p>}
-                <button className='check-answers-btn' onClick={revealAnswers}>Check answers</button>
+                {showAnswers ?  <button className='check-answers-btn' onClick={() => window.location.reload(false)}>Play again</button>
+                : <button className='check-answers-btn' onClick={revealAnswers}>Check answers</button>}
             </div>
         </div>
     );

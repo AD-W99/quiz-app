@@ -5,13 +5,13 @@ import './App.css';
 
 function App() {
   const [quizStart, setQuizStart] = useState(false);
-  const [triviaData, setTriviaData] = useState([])
+  const [triviaData, setTriviaData] = useState([]);
 
   function startQuiz() {
     setQuizStart(prevState => !prevState)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
       .then(res => res.json())
       .then(data => setTriviaData(data.results.map(obj => {

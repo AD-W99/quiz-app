@@ -12,11 +12,16 @@ body {
     align-items: center;
 }
 
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .check-answers-btn {
     height: 35px;
     color: #F5F7FB;
     background-color: #4D5B9E;
     border-radius: 10px;
-    margin-top: 1rem;
     font-family: 'Karla';
 }
